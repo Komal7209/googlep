@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap1.css' %}">
+</head>
+<style>
+     select{
+         text-align: center;
+width:100%;
+         height:100%;
+        -webkit-appearance: none;
+        border: none;border-width:0;
+    }
+    .form-control{
+        padding:0px 0px;
+    }
+</style>
+<body >
+<div >
+<h1 class="bg-info p-5" style="height: 150px; text-align: center; margin: auto;">Hi User Please Select Your Preferences!!</h1></div>
+<form method="post">
+    <div class="row p-4">
+         <div class="col-md-2 m-1 container  row rounded p-lg-3" style=" background-color: rgba(122,186,255,0.57); box-shadow:5px 5px 5px; margin:auto;margin-top: 30px;">
+
+             <hr><h6>
+            <ul class="list-inline-item table-hover">
+                Select the top courses
+                <li>Data Science</li>
+
+                <li>Artificial Intelligence</li>
+                <li>Programming</li>
+                <li>Autonomous System</li>
+                <li>Cloud Computing</li>
+            </ul><hr><hr>
+             <ol>
+                Select flexible Duration
+                <li>1 month</li>
+
+                <li>2-3 month</li>
+                <li>3-6 month</li>
+                <li>more than 1 month</li>
+
+            </ol>
+        </h6>
+    </div>
+<div class=" m-l-5 col-md-9 container bg-light row rounded " style="box-shadow:5px 5px 5px; margin:auto;margin-top: 30px; height:400px;">
+    <div class="col-md-10 offset-1 p-lg-5">
+					<div class="row m-4" >
+						<label class="col-md-6" >Search:</label>
+                        <div class="col-md-4 form-control a" >{{ forms.search}}</div><!--creates dropdown for type of course selection*/-->
+                    </div>
+                        <div class="row m-4">
+        <label class="col-md-6">Duration:</label>
+        <div class="col-md-4 form-control a" > {{ forms.duration}}</div><!--creates dropdown for duration selection-->
+                        </div>
+        {% csrf_token %}<!--provides security token for the form-->
+        <div class="row m-5">
+            <hr>
+        <input class="btn btn-primary col-md-4 m-4 offset-4 form-control border-info" type="submit" value="Submit"><hr>
+        </div>
+    </div>
+    </div>
+</div>
+
+ </form>
+</body>
+</html>

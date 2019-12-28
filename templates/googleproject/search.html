@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>result</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+
+</head>
+<style>
+    hr{
+        width:3px;
+    }
+</style>
+<body style="background-color: rgba(255,196,5,0.28)">
+<div class="card-header mb-4" style="background-color: rgba(12,217,49,0.29);text-align: center; margin:0px 0px;">
+<h1 style="margin: auto;">Best Suitable Course Options For You!!</h1><hr><hr>
+    <h3>Wish You May Like Our Suggestions</h3><hr>
+    </div>
+<div class="container   jumbotron border-danger " style="background-color: #ccdcff">
+   <!-- <table class="table table-bordered table-hover table-info ">
+        <thead class="table-active">
+    <th>Title</th>
+    <th>Duration</th>
+    <th colspan="3">Details</th>
+    <th colspan="2">Link</th>
+    <th>Level</th>
+    </thead>
+    <tbody>
+    <tr>
+        <td>{{ search_result.title.2}}</td>
+        <td>{{ search_result.duration }}</td>
+        <td colspan="3">{{ search_result.description }}</td>
+        <td colspan="2">{{ search_result.link }}</td>
+        <td>{{ search_result.level }}</td>
+    </tr>
+    </tbody>
+    </table>
+--><!--table-->
+<hr><hr>
+
+    <!--output showing from the list generated in views.py from class search show object defined in forms.py-->
+        {%  for title in test_result.Title  %}
+        {%  for rating in test_result.Rating  %}
+        {%  for disp in test_result.display  %}
+             <div class="rounded bg-light border-info text-center m-2 " style=" margin: auto;box-shadow: 3px 3px 3px;">
+            <h1>Title: {{ title }}</h1>
+            <h4>{{ disp }}</h4>
+            <h5>{{ disp }}</h5>
+             </div>
+        {% endfor %}
+        {% endfor %}
+        {% endfor %}
+
+<hr><hr>
+</div>
+</body>
+</html>
